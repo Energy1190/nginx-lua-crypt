@@ -5,8 +5,11 @@ RUN luarocks install lua-resty-auto-ssl \
     && chown www-data /etc/resty-auto-ssl
 	
 RUN mkdir -p /etc/nginx/conf.d \
-    && chown www-data -R /etc/nginx/
+    && chown www-data -R /etc/nginx
 
+RUN mkdir -p /var/log/nginx/ \
+    && chown www-data /var/log/nginx
+	
 ADD nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 ADD fastcgi_params /etc/nginx/fastcgi_params
 
