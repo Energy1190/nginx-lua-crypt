@@ -1,6 +1,6 @@
 FROM openresty/openresty:1.11.2.5-xenial
 
-RUN mkdir -p /etc/resty-auto-ssl \
+RUN mkdir -p /etc/resty-auto-ssl /etc/resty-auto-ssl/storage/file \
     && chown www-data /etc/resty-auto-ssl \
     && luarocks install lua-resty-auto-ssl
 	
@@ -12,9 +12,6 @@ RUN mkdir -p /etc/nginx/locations \
     
 RUN mkdir -p /var/log/nginx/ \
     && chown www-data /var/log/nginx
-
-RUN mkdir -p /etc/resty-auto-ssl/storage/file/ \
-    && chown -R nobody /etc/resty-auto-ssl
     
 RUN openssl req -new -newkey rsa:2048 -days 3650 -nodes -x509 \
     -subj '/CN=sni-support-required-for-valid-ssl' \
