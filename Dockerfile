@@ -8,7 +8,7 @@ RUN mkdir -p /etc/nginx/conf.d \
     && chown www-data -R /etc/nginx
     
 RUN mkdir -p /etc/nginx/locations \
-    && chown www-data -R /etc/locations
+    && chown www-data -R /etc/nginx/locations
     
 RUN mkdir -p /var/log/nginx/ \
     && chown www-data /var/log/nginx
