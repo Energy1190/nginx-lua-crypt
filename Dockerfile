@@ -1,7 +1,7 @@
 FROM openresty/openresty:1.11.2.5-xenial
 
 RUN mkdir -p /etc/resty-auto-ssl /etc/resty-auto-ssl/storage/file \
-    && chown -R www-data:www-data /etc/resty-auto-ssl \
+    && chown -R nobody /etc/resty-auto-ssl \
     && luarocks install lua-resty-auto-ssl
 	
 RUN mkdir -p /etc/nginx/conf.d \
