@@ -1,5 +1,7 @@
 FROM openresty/openresty:1.11.2.5-xenial
 
+RUN apt-get update && apt-get install -y sendmail
+
 RUN mkdir -p /etc/resty-auto-ssl /etc/resty-auto-ssl/storage/file \
     && chown -R nobody /etc/resty-auto-ssl \
     && luarocks install lua-resty-auto-ssl
