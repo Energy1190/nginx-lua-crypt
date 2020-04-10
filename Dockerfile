@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.11.2.5-xenial
+FROM openresty/openresty:1.15.8.3-xenial
 
 RUN mkdir -p /etc/resty-auto-ssl /etc/resty-auto-ssl/storage/file \
     && chown -R nobody /etc/resty-auto-ssl \
